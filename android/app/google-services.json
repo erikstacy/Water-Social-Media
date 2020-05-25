@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "502424560920",
+    "firebase_url": "https://water-social-media.firebaseio.com",
+    "project_id": "water-social-media",
+    "storage_bucket": "water-social-media.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:502424560920:android:448f4c18dc4a0f0a52aa6d",
+        "android_client_info": {
+          "package_name": "com.mugen_codes.water_social_media"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "502424560920-pv7otkrpg7ko7tv8609fgsoc222l160s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLNXIYz59O_ijuKdCoPU43n3bsVP_Hvyg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "502424560920-pv7otkrpg7ko7tv8609fgsoc222l160s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

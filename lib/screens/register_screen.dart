@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:water_social_media/generics/auth_form.dart';
 import 'package:water_social_media/generics/title_section.dart';
 import 'package:water_social_media/generics/wide_rounded_button.dart';
-import 'package:water_social_media/screens/register_screen.dart';
 import 'package:water_social_media/services/form_validation.dart';
 
-class LoginScreen extends StatefulWidget {
+class RegisterScreen extends StatefulWidget {
   @override
-  _LoginScreenState createState() => _LoginScreenState();
+  _RegisterScreenState createState() => _RegisterScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _RegisterScreenState extends State<RegisterScreen> {
 
   TextEditingController _emailController;
   TextEditingController _passwordController;
@@ -42,8 +40,7 @@ class _LoginScreenState extends State<LoginScreen> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
               TitleSection(
-                icon: FontAwesomeIcons.tint,
-                title: 'H20',
+                title: 'Welcome!',
                 color: Colors.blue[700],
               ),
               AuthForm(
@@ -54,19 +51,9 @@ class _LoginScreenState extends State<LoginScreen> {
               Column(
                 children: <Widget>[
                   WideRoundedButton(
-                    text: 'Login',
-                    onPressed: _onLogin,
+                    text: 'Register',
+                    onPressed: _onRegister,
                     backgroundColor: Colors.blue[700],
-                  ),
-                  FlatButton(
-                    child: Text(
-                      'Register',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 16,
-                      ),
-                    ),
-                    onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => RegisterScreen())),
                   ),
                 ],
               )
@@ -77,7 +64,7 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  void _onLogin() {
-    FormValidation.loginButtonPress(context, _emailController.text, _passwordController.text);
+  void _onRegister() {
+    FormValidation.registerButtonPress(context, _emailController.text, _passwordController.text);
   }
 }

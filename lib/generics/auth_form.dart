@@ -4,10 +4,12 @@ class AuthForm extends StatefulWidget {
 
   final TextEditingController emailController;
   final TextEditingController passwordController;
+  final Color backgroundColor;
 
   AuthForm({
     @required this.emailController,
     @required this.passwordController,
+    this.backgroundColor = Colors.black,
   });
 
   @override
@@ -24,12 +26,14 @@ class _AuthFormState extends State<AuthForm> {
           textController: widget.emailController,
           hintText: 'Email',
           inputType: TextInputType.emailAddress,
+          backgroundColor: widget.backgroundColor,
         ),
         SizedBox(height: 20,),
         _CircularInput(
           textController: widget.passwordController,
           hintText: 'Password',
           obscureText: true,
+          backgroundColor: widget.backgroundColor,
         ),
       ],
     );
@@ -42,12 +46,14 @@ class _CircularInput extends StatelessWidget {
   final String hintText;
   final TextInputType inputType;
   final bool obscureText;
+  final Color backgroundColor;
 
   _CircularInput({
     this.textController,
     this.hintText,
     this.inputType,
     this.obscureText = false,
+    this.backgroundColor,
   });
 
   @override
@@ -56,7 +62,7 @@ class _CircularInput extends StatelessWidget {
       margin: EdgeInsets.symmetric(horizontal: 30),
       padding: EdgeInsets.symmetric(horizontal: 20),
       decoration: BoxDecoration(
-        color: Colors.grey[900],
+        color: backgroundColor,
         borderRadius: BorderRadius.circular(30),
       ),
       child: TextField(

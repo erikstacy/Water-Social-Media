@@ -4,10 +4,12 @@ class WideRoundedButton extends StatelessWidget {
 
   final String text;
   final Function onPressed;
+  final Color backgroundColor;
 
   WideRoundedButton({
     @required this.text,
     @required this.onPressed,
+    this.backgroundColor = Colors.grey,
   });
 
   @override
@@ -17,10 +19,10 @@ class WideRoundedButton extends StatelessWidget {
         text,
         style: TextStyle(
           fontSize: 16,
-          color: Colors.black,
+          color: Colors.white,
         ),
       ),
-      color: Colors.white,
+      color: backgroundColor,
       padding: EdgeInsets.symmetric(horizontal: 80, vertical: 13),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(30),
