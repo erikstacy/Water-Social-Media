@@ -32,22 +32,6 @@ class _MainScreenState extends State<MainScreen> {
         centerTitle: true,
         backgroundColor: Colors.blue[700],
       ),
-      drawer: Drawer(
-        child: SafeArea(
-          child: Column(
-            children: <Widget>[
-              ListTile(
-                title: Text('Sign Out'),
-                onTap: () {
-                  AuthService _auth = AuthService();
-                  _auth.signOut();
-                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => LoginScreen()));
-                },
-              ),
-            ],
-          ),
-        ),
-      ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
