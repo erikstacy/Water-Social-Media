@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:water_social_media/generics/warning_alert.dart';
 import 'package:water_social_media/screens/main_screen.dart';
+import 'package:water_social_media/screens/initialize_screen.dart';
 import 'package:water_social_media/services/auth.dart';
 
 class FormValidation {
@@ -51,7 +52,7 @@ class FormValidation {
     int formResult = await _validateEmailRegistration(email, password);
 
     if (formResult == 0) {
-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => MainScreen()));
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => InitializeScreen()));
     } else if (formResult == 1) {
       showDialog(
         context: context,
