@@ -15,7 +15,6 @@ class AuthService {
     try {
       FirebaseUser user = (await _auth.createUserWithEmailAndPassword(email: email, password: password)).user;
       updateUserData(user);
-      initializeUser(user);
       return user;
     } catch (e) {
       return null;
@@ -25,7 +24,6 @@ class AuthService {
   Future<FirebaseUser> emailLogin(String email, String password) async {
     try {
       FirebaseUser user = (await _auth.signInWithEmailAndPassword(email: email, password: password)).user;
-      updateUserData(user);
       return user;
     } catch (e) {
       return null;
@@ -39,27 +37,8 @@ class AuthService {
     return userRef.setData({
       'uid': user.uid,
       'email': user.email,
+      'totalWater': 0,
     }, merge: true);
-  }
-
-  void initializeUser(FirebaseUser user) {
-    DocumentReference userRef = _db.collection('users').document(user.uid);
-
-    /*
-    userRef.setData({
-      'categoryTitle': '..newUser',
-      'startTime': DateTime.utc(1960, 1, 1, 12, 0, 0),
-      'lastDay': DateTime.now(),
-    }, merge: true);
-
-    _db.collection('users').document(user.uid).collection('categories').add({
-      "title": 'Temporary',
-      "todayTime": 0,
-      "yesterdayTime": 0,
-      "weekTime": 0,
-      "monthTime": 0,
-    });
-    */
   }
 
   Future<void> signOut() {

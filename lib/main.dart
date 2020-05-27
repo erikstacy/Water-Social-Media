@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         StreamProvider<User>.value(value: Global.userDocument.documentStream),
+        StreamProvider<List<Post>>.value(value: Global.postCollection.streamData()),
       ],
       child: MaterialApp(
         title: 'Water Social Media',

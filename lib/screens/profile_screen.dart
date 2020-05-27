@@ -25,25 +25,55 @@ class _ProfileScreenState extends State<ProfileScreen> {
         backgroundColor: Colors.blue[300],
         body: Center(
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
-              SizedBox(height: 20,),
-              CircleAvatar(
-                radius: 60,
-                child: Text(
-                  user.username[0].toUpperCase(),
-                  style: TextStyle(
-                    fontSize: 40,
+              Column(
+                children: [
+                  CircleAvatar(
+                    radius: 60,
+                    child: Text(
+                      user.username[0].toUpperCase(),
+                      style: TextStyle(
+                        fontSize: 40,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 20,),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 40),
+                    child: Text(
+                      user.username,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 30,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              Card(
+                color: Colors.blue[700],
+                child: Padding(
+                  padding: const EdgeInsets.all(30),
+                  child: Column(
+                    children: [
+                      Text(
+                        'Total Water Consumed',
+                        style: TextStyle(
+                          fontSize: 20,
+                        ),
+                      ),
+                      SizedBox(height: 20,),
+                      Text(
+                        user.totalWater.toString(),
+                        style: TextStyle(
+                          fontSize: 60,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),
-              SizedBox(height: 20,),
-              Text(
-                user.username,
-                style: TextStyle(
-                  fontSize: 30,
-                ),
-              ),
-              SizedBox(height: 20,),
               WideRoundedButton(
                 text: 'Sign Out',
                 backgroundColor: Colors.blue[700],
